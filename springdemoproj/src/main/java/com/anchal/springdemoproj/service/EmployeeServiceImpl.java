@@ -2,16 +2,19 @@ package com.anchal.springdemoproj.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.anchal.springdemoproj.dao.EmployeeDAO;
 import com.anchal.springdemoproj.entity.Employee;
 
+@Repository
 public class EmployeeServiceImpl implements EmployeeService{
 	
 	private EmployeeDAO employeeDAO;
 
-	public EmployeeServiceImpl(EmployeeDAO employeeDAO) {
+	public EmployeeServiceImpl(@Qualifier("employeeDAOJpaImpl") EmployeeDAO employeeDAO) {
 		this.employeeDAO = employeeDAO;
 	}
 
