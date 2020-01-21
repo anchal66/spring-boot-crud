@@ -30,7 +30,7 @@ public class EmployeeRestController {
 		return employeeService.findAll();
 	}
 	
-	@GetMapping("/employess/{employeeId}")
+	@GetMapping("/employees/{employeeId}")
 	public Employee getEmployee(@PathVariable int employeeId) {
 		Employee employee = employeeService.findById(employeeId);
 		if(employee == null)
